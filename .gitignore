@@ -1,0 +1,5 @@
+.DS_Store
+.openai/*.local.json
+node_modules/
+*.tar.gz
+*.class
