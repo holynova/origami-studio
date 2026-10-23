@@ -8,41 +8,40 @@
 </head>
 <body>
 <header class="topbar">
-<a class="brand" href="./" aria-label="纸间首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 14 19 20 34 6 28 28 19 20 12 34 13 22Z" fill="currentColor"/><path d="m3 14 10 8 6-2M19 20l9 8" fill="none" stroke="#f5f3ed" stroke-width=".7"/></svg><strong>纸间</strong><span class="brand-line"></span><span class="brand-en">PAPER, IN MOTION</span></a>
-<div class="header-right"><span class="intro">一张纸，无限可能。</span><button class="text-button" id="about-open">关于纸间 <span>↗</span></button></div>
+<a class="brand" href="./" aria-label="纸间首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 14 19 20 34 6 28 28 19 20 12 34 13 22Z" fill="currentColor"/><path d="m3 14 10 8 6-2M19 20l9 8" fill="none" stroke="#f5f3ed" stroke-width=".7"/></svg><strong>纸间</strong></a>
+<div class="header-right"><button class="text-button" id="about-open">关于</button></div>
 </header>
 <main class="workspace">
 <aside class="library" aria-label="折纸作品库">
-<div class="section-heading"><span class="eyebrow">THE COLLECTION</span><span class="count">05</span></div>
-<h1>从一张纸开始。</h1><p class="library-sub">选一个喜欢的，慢慢折。</p>
+<h1>作品</h1>
 <div id="model-list" class="model-list"></div>
-<div class="library-foot"><svg viewBox="0 0 48 32" aria-hidden="true"><path d="m2 22 13-8 11 9 18-19-6 25-12-6-7 7-4-16Z"/></svg><p>把时间折进纸里。<br><span>留一点专注，给小小的事物。</span></p></div>
+
 </aside>
 <section class="studio" aria-label="折纸工作台">
-<div class="stage-head"><div><span class="eyebrow">FOLDING STUDIO</span><div class="stage-heading"><h2 id="model-title">千纸鹤</h2><span id="model-en">THE PAPER CRANE</span></div></div><div class="view-switch" aria-label="显示模式"><button class="active" id="view-3d" aria-pressed="true">立体</button><button id="view-flat" aria-pressed="false">折痕图</button></div></div>
+<div class="stage-head"><div><div class="stage-heading"><h2 id="model-title">千纸鹤</h2></div></div><div class="view-switch" aria-label="显示模式"><button class="active" id="view-3d" aria-pressed="true">立体</button><button id="view-flat" aria-pressed="false">折痕图</button></div></div>
 <div id="stage" class="stage">
-<div class="stage-cross cross-tl">+</div><div class="stage-cross cross-tr">+</div><div class="stage-cross cross-bl">+</div><div class="stage-cross cross-br">+</div>
-<div class="stage-corner"><span class="live-dot"></span><span id="stage-status">纸已就位</span></div>
+
+
 <div id="canvas-container"></div><canvas id="crease-canvas" hidden aria-label="平面折痕图"></canvas>
-<div class="loading" id="loading"><span class="loading-paper"></span>正在展开一张纸…</div>
+<div class="loading" id="loading"><span class="loading-paper"></span>加载中…</div>
 <div class="view-tools"><button class="icon-button" id="rotate" title="自动旋转" aria-label="自动旋转" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M20 8a9 9 0 1 0 1 6M20 3v5h-5"/></svg></button><button class="icon-button" id="reset-view" title="重置视角" aria-label="重置视角"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button><button class="icon-button" id="fullscreen" title="全屏工作台" aria-label="全屏工作台"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg></button></div>
-<div class="stage-base"><span id="sheet-label">一张方纸 · 15 × 15 cm</span><span id="gesture-hint">拖动旋转 · 滚轮缩放</span></div>
+
 </div>
 <div class="playback">
-<div class="playback-top"><div class="current-step"><span id="step-number">00</span><div><strong id="step-title">一张纸的可能</strong><p id="step-description">准备好，让折痕带着我们出发。</p></div></div><span class="step-fraction"><span id="step-current">00</span> / <span id="step-total">00</span></span></div>
+<div class="playback-top"><div class="current-step"><div><strong id="step-title">未折叠</strong></div></div><span class="step-fraction"><span id="step-current">00</span> / <span id="step-total">00</span></span></div>
 <div class="timeline-row"><input id="timeline" type="range" min="0" max="1000" value="1000" aria-label="折叠进度"><div class="timeline-marks" id="timeline-marks"></div></div>
 <div class="playback-bottom"><div class="transport"><button class="icon-button" id="restart" title="从头开始" aria-label="从头开始"><svg viewBox="0 0 24 24"><path d="M4 8a8 8 0 1 1-1 7M4 3v5h5"/></svg></button><button class="icon-button" id="prev" title="上一步" aria-label="上一步"><svg viewBox="0 0 24 24"><path d="M6 5v14M18 5 8 12l10 7Z"/></svg></button><button class="play-button" id="play" aria-label="播放折叠"><svg viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg><span>开始折叠</span></button><button class="icon-button" id="next" title="下一步" aria-label="下一步"><svg viewBox="0 0 24 24"><path d="M18 5v14M6 5l10 7-10 7Z"/></svg></button></div><div class="speed-control"><label for="speed">速度</label><select id="speed" aria-label="播放速度"><option value="0.5">0.5 ×</option><option value="1" selected>1 ×</option><option value="1.5">1.5 ×</option><option value="2">2 ×</option></select></div></div>
 </div>
-<div class="studio-caption"><span class="caption-rule"></span><span>每一道折痕，都是形状的开始。</span><span class="caption-rule"></span></div>
+
 </section>
 <aside class="inspector" aria-label="纸张设置与折叠步骤">
-<div class="paper-settings"><span class="eyebrow">MAKE IT YOURS</span><h3>给纸一点颜色</h3><div id="swatches" class="swatches" aria-label="纸张颜色"></div><div class="paper-color-label"><span id="color-name">朱砂红</span><span id="color-code">#CB6551</span></div><div class="setting-row"><label for="show-edges">显示折痕</label><input id="show-edges" type="checkbox" role="switch" checked></div><div class="setting-row"><label for="two-tone">双色纸张</label><input id="two-tone" type="checkbox" role="switch" checked></div></div>
-<div class="steps-section"><div class="steps-header"><h3>折叠旅程</h3><span id="journey-count">— 道折痕</span></div><ol id="steps-list"></ol></div>
-<button id="download" class="download-button"><svg viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg><span>保存这一刻</span><span>↓</span></button><div class="inspector-note"><span>✳</span> 不急，随时可以回到上一道折痕。</div>
+<div class="paper-settings"><h3>纸张</h3><div id="swatches" class="swatches" aria-label="纸张颜色"></div><div class="paper-color-label"><span id="color-name">朱砂红</span></div><div class="setting-row"><label for="show-edges">折痕</label><input id="show-edges" type="checkbox" role="switch" checked></div><div class="setting-row"><label for="two-tone">双色纸张</label><input id="two-tone" type="checkbox" role="switch" checked></div></div>
+<div class="steps-section"><div class="steps-header"><h3>步骤</h3><span id="journey-count"></span></div><ol id="steps-list"></ol></div>
+<button id="download" class="download-button"><svg viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M5 16v5h14v-5"/></svg><span>导出 PNG</span></button>
 </aside>
 </main>
-<footer class="footer"><span>纸间 <span class="footer-dot">·</span> A LITTLE WORLD, FROM A SINGLE SHEET.</span><span>用代码折纸，用片刻放空。 <span class="footer-flower">✳</span></span></footer>
+
 <div id="toast" class="toast" role="status"></div>
-<dialog id="about-dialog"><button id="about-close" class="dialog-close" aria-label="关闭">×</button><span class="eyebrow">ABOUT THE STUDIO</span><h2>一张纸，<br>另一种可能。</h2><p>纸间是一个浏览器里的折纸实验室。选择作品，播放折叠，或拖动时间线，把每一道折痕看得更清楚。</p><p>空格播放 / 暂停，左右方向键切换步骤；鼠标拖动或单指滑动旋转，滚轮或双指捏合缩放。折痕图可以查看完整的展开图案。</p><p class="technical-note">模型以面片绕折线旋转，并对共享网格施加长度约束，保持纸面连接；存在小幅数值误差。此版本为折叠过程可视化，未模拟纸张厚度与完整的自碰撞，复杂收拢步骤可能出现面片相交。</p><p class="credits">折叠模型与几何计算源自 <a href="https://github.com/bagyoni/origamieditor3d" target="_blank" rel="noreferrer">Origami Editor 3D</a>（Attila Bágyoni）。界面与动画播放器为本项目制作。<a href="./LICENSE" target="_blank">GPL-3.0</a> · <a href="./source.zip" download>下载完整源码</a>。本软件不提供担保。</p></dialog>
+<dialog id="about-dialog"><button id="about-close" class="dialog-close" aria-label="关闭">×</button><h2>关于纸间</h2><p>空格播放 / 暂停，左右方向键切换步骤；鼠标拖动或单指滑动旋转，滚轮或双指捏合缩放。折痕图可以查看完整的展开图案。</p><p class="technical-note">模型以面片绕折线旋转，并对共享网格施加长度约束，保持纸面连接；存在小幅数值误差。此版本为折叠过程可视化，未模拟纸张厚度与完整的自碰撞，复杂收拢步骤可能出现面片相交。</p><p class="credits">折叠模型与几何计算源自 <a href="https://github.com/bagyoni/origamieditor3d" target="_blank" rel="noreferrer">Origami Editor 3D</a>（Attila Bágyoni）。界面与动画播放器为本项目制作。<a href="./LICENSE" target="_blank">GPL-3.0</a> · <a href="./source.zip" download>下载完整源码</a>。本软件不提供担保。</p></dialog>
 <script type="module" src="./app.js"></script>
 </body></html>
