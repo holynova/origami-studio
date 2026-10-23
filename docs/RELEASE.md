@@ -20,7 +20,7 @@ Portfolio: holynova/holynova.github.io, master; Worker xiaosang-portfolio
 
 ## Route selection
 
-The first custom-domain binding was rejected with Cloudflare code 100122: the zone has reached its 100 Workers custom-domain limit. The uploaded Worker remains intact. This release follows the account’s existing Fourier Atlas and Podcast Atlas path-routing convention: xiaosang.cc/origami-studio and xiaosang.cc/origami-studio/*, served by the independent origami-studio Worker. No existing domain or route is replaced. The final README, QR, Homepage, and catalog use the verified path URL.
+The first custom-domain binding was rejected with Cloudflare code 100122: the zone has reached its 100 Workers custom-domain limit. The uploaded Worker remains intact. This release follows the account’s existing Fourier Atlas and Podcast Atlas path-routing convention: xiaosang.cc/origami-studio* (the Worker enforces the exact /origami-studio path boundary), served by the independent origami-studio Worker. No existing domain or route is replaced. The final README, QR, Homepage, and catalog use the verified path URL.
 
 ## Release verification (2026-10-23)
 
@@ -29,3 +29,7 @@ The first custom-domain binding was rejected with Cloudflare code 100122: the zo
 - The live Chrome page rendered the crane with 15 steps and the five-model library. Local browser playback, crease rendering and PNG export were checked before release. Slow local network connections required bounded retries.
 - Five-model geometry checks, release README/version validators, QR decoding, path-prefix routing assertions and Wrangler dry-run passed.
 - Published source: d889d8f8506f3da3bfbcf4f03dd25e4ec4848d34; initial successful Worker version: 49ea6b72-703e-45a1-9f53-5d962a66f4c7. Final metadata confirmation is redeployed from the same pushed main branch; the final release report records the resulting IDs.
+
+## Query-preserving entry routing
+
+A live check found that the exact bare-prefix route did not catch /origami-studio?release=1. Cloudflare matches query strings as part of the URL, so this route now ends in a wildcard. The Worker already redirects only the exact bare prefix with status 308, preserving the query, and returns 404 outside the /origami-studio/ boundary. No other project route is changed. Reference: https://developers.cloudflare.com/workers/configuration/routing/routes/#matching-behavior
