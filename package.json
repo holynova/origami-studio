@@ -1,1 +1,17 @@
-{"name":"paper-in-motion","version":"1.0.0","private":true,"type":"module","license":"GPL-3.0-only","description":"纸间 · 折纸实验室 — HTML / CSS / JavaScript origami studio","scripts":{"dev":"python3 -m http.server 5186 --directory dist","check":"node --check dist/app.js && node --check dist/creases.js && node scripts/check-models.mjs"}}
+{
+  "name": "paper-in-motion",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "description": "纸间 · 折纸实验室 — HTML / CSS / JavaScript origami studio",
+  "scripts": {
+    "dev": "python3 -m http.server 5186 --directory dist",
+    "check": "node --check dist/app.js && node --check dist/creases.js && node scripts/check-models.mjs",
+    "deploy:check": "wrangler deploy --dry-run --config wrangler.jsonc",
+    "deploy": "wrangler deploy --config wrangler.jsonc"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
+  }
+}

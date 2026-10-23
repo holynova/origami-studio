@@ -3,7 +3,7 @@ from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
 root = Path(__file__).resolve().parents[1]
 with ZipFile(root / 'dist/source.zip', 'w', ZIP_DEFLATED) as archive:
-    for name in ['dist', 'scripts', 'README.md', 'LICENSE', 'package.json', '.gitignore']:
+    for name in ['dist', 'scripts', 'docs', 'assets', 'README.md', 'LICENSE', 'package.json', 'package-lock.json', 'wrangler.jsonc', '.gitignore']:
         item = root / name
         files = sorted(item.rglob('*')) if item.is_dir() else [item]
         for file in files:
