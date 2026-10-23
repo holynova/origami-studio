@@ -8,7 +8,7 @@ English: An interactive 3D origami studio featuring a crane, boat, airplane, but
 
 ## 在线体验 / Live Demo
 
-- [Cloudflare Demo — 待验证 / pending verification](https://xiaosang.cc/origami-studio/)
+- [Cloudflare Demo](https://xiaosang.cc/origami-studio/)
 - [GitHub Repo](https://github.com/holynova/origami-studio)
 
 <img src="./assets/qr.png" width="180" alt="扫码打开纸间 / Scan to open Paper in Motion">
