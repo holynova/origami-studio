@@ -3,7 +3,22 @@
   "name": "origami-studio",
   "account_id": "ef7863c4de93e71c3496f940c8ab4865",
   "compatibility_date": "2026-10-23",
+  "main": "worker.js",
   "workers_dev": false,
-  "assets": { "directory": "./dist" },
-  "routes": [ { "pattern": "origami-studio.xiaosang.cc", "custom_domain": true } ]
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "xiaosang.cc/origami-studio",
+      "zone_id": "a9ae8ed6c9a473e6c79daa58b29e8b12"
+    },
+    {
+      "pattern": "xiaosang.cc/origami-studio/*",
+      "zone_id": "a9ae8ed6c9a473e6c79daa58b29e8b12"
+    }
+  ]
 }

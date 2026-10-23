@@ -1,6 +1,6 @@
 # Cloudflare publication
 
-Target: https://origami-studio.xiaosang.cc/
+Target: https://xiaosang.cc/origami-studio/
 Repository: https://github.com/holynova/origami-studio
 Source branch: main
 Worker: origami-studio
@@ -17,3 +17,7 @@ Portfolio: holynova/holynova.github.io, master; Worker xiaosang-portfolio
 - Screenshot: existing 1280 × 720 real browser screenshot reused; core studio UI unchanged.
 - QR and bilingual release README: missing, to complete.
 - Portfolio and GitHub Profile entries: missing, to complete from clean upstream checkouts, preserving unrelated local commits.
+
+## Route selection
+
+The first custom-domain binding was rejected with Cloudflare code 100122: the zone has reached its 100 Workers custom-domain limit. The uploaded Worker remains intact. This release follows the account’s existing Fourier Atlas and Podcast Atlas path-routing convention: xiaosang.cc/origami-studio and xiaosang.cc/origami-studio/*, served by the independent origami-studio Worker. No existing domain or route is replaced. The final README, QR, Homepage, and catalog use the verified path URL.

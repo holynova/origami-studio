@@ -8,7 +8,7 @@ English: An interactive 3D origami studio featuring a crane, boat, airplane, but
 
 ## 在线体验 / Live Demo
 
-- [Cloudflare Demo — 待验证 / pending verification](https://origami-studio.xiaosang.cc/)
+- [Cloudflare Demo — 待验证 / pending verification](https://xiaosang.cc/origami-studio/)
 - [GitHub Repo](https://github.com/holynova/origami-studio)
 
 <img src="./assets/qr.png" width="180" alt="扫码打开纸间 / Scan to open Paper in Motion">
@@ -30,7 +30,7 @@ npm run deploy:check
 npm run deploy
 ```
 
-Cloudflare Workers · `origami-studio.xiaosang.cc` · `main`.
+Cloudflare Workers Routes · `xiaosang.cc/origami-studio/` · `main`.
 
 源码与部署配置保存在同一主分支，在本地手动发布。 / Source and deployment configuration share one main branch; deployments run manually from that commit.
 
