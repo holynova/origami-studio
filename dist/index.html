@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f5f3ed"><meta name="description" content="在纸间，用一张纸折出整个世界。探索千纸鹤、小船、纸飞机、蝴蝶和青蛙的三维折叠过程。">
-<title>纸间 · 折纸实验室</title>
+<title>纸间 — 折纸实验室</title>
 <link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css">
 <link rel="canonical" href="https://xiaosang.cc/origami-studio/">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="e01c9f78-4607-4e60-b01c-77c8190b12b4"></script>
@@ -20,11 +20,11 @@
 
 </aside>
 <section class="studio" aria-label="折纸工作台">
-<div class="stage-head"><div><div class="stage-heading"><h2 id="model-title">千纸鹤</h2></div></div><div class="view-switch" aria-label="显示模式"><button class="active" id="view-3d" aria-pressed="true">立体</button><button id="view-flat" aria-pressed="false">折痕图</button></div></div>
+<div class="stage-head"><div><div class="stage-heading"><h2 id="model-title">千纸鹤</h2><p class="model-tag" id="model-tag">展翅的祝福</p></div></div><div class="view-switch" aria-label="显示模式"><button class="active" id="view-3d" aria-pressed="true">立体</button><button id="view-flat" aria-pressed="false">展开图</button></div></div>
 <div id="stage" class="stage">
 
 
-<div id="canvas-container"></div><canvas id="crease-canvas" hidden aria-label="平面折痕图"></canvas>
+<div id="canvas-container"></div><canvas id="crease-canvas" hidden aria-label="平面展开图"></canvas>
 <div class="loading" id="loading"><span class="loading-paper"></span>加载中…</div>
 <div class="view-tools"><button class="icon-button" id="rotate" title="自动旋转" aria-label="自动旋转" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M20 8a9 9 0 1 0 1 6M20 3v5h-5"/></svg></button><button class="icon-button" id="reset-view" title="重置视角" aria-label="重置视角"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button><button class="icon-button" id="fullscreen" title="全屏工作台" aria-label="全屏工作台"><svg viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M3 16v5h5"/></svg></button></div>
 
@@ -44,6 +44,6 @@
 </main>
 
 <div id="toast" class="toast" role="status"></div>
-<dialog id="about-dialog"><button id="about-close" class="dialog-close" aria-label="关闭">×</button><h2>关于纸间 <small class="app-version">v1.0.1</small></h2><p>空格播放 / 暂停，左右方向键切换步骤；鼠标拖动或单指滑动旋转，滚轮或双指捏合缩放。折痕图可以查看完整的展开图案。</p><p class="technical-note">模型以面片绕折线旋转，并对共享网格施加长度约束，保持纸面连接；存在小幅数值误差。此版本为折叠过程可视化，未模拟纸张厚度与完整的自碰撞，复杂收拢步骤可能出现面片相交。</p><p class="credits"><a href="https://github.com/holynova/origami-studio" target="_blank" rel="noreferrer">GitHub 源码</a> · 折叠模型与几何计算源自 <a href="https://github.com/bagyoni/origamieditor3d" target="_blank" rel="noreferrer">Origami Editor 3D</a>（Attila Bágyoni）。界面与动画播放器为本项目制作。<a href="./LICENSE" target="_blank">GPL-3.0</a> · <a href="./source.zip" download>下载完整源码</a>。本软件不提供担保。</p></dialog>
+<dialog id="about-dialog"><button id="about-close" class="dialog-close" aria-label="关闭">×</button><h2>关于纸间 <small class="app-version">v1.0.2</small></h2><p>空格播放 / 暂停，左右方向键切换步骤；鼠标拖动或单指滑动旋转，滚轮或双指捏合缩放。点「展开图」可以查看完整的展开图案。</p><p class="technical-note">模型以面片绕折线旋转，并对共享网格施加长度约束，保持纸面连接；存在小幅数值误差。此版本为折叠过程可视化，未模拟纸张厚度与完整的自碰撞，复杂收拢步骤可能出现面片相交。</p><p class="credits"><a href="https://github.com/holynova/origami-studio" target="_blank" rel="noreferrer">GitHub 源码</a>，折叠模型与几何计算源自 <a href="https://github.com/bagyoni/origamieditor3d" target="_blank" rel="noreferrer">Origami Editor 3D</a>（Attila Bágyoni）。界面与动画播放器为本项目制作。<a href="./LICENSE" target="_blank">GPL-3.0</a>、<a href="./source.zip" download>下载完整源码</a>。本软件不提供担保。</p></dialog>
 <script type="module" src="./app.js"></script>
 </body></html>
